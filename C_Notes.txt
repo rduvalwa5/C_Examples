@@ -1,0 +1,19 @@
+Note on C programming
+
+Links:
+Good source for command line:
+http://www.delorie.com/djgpp/doc/ug/compiling/gcc.html
+
+Starting fresh:
+command line compile with out put name:
+	gcc hello.c -o hello.exe
+
+C++ API:
+http://www.cplusplus.com/reference/
+http://theocacao.com/document.page/231
+
+** Pointers and References **	
+	
+http://stackoverflow.com/questions/8732325/how-to-declare-strings-in-c	
+http://stackoverflow.com/questions/37538/how-do-i-determine-the-size-of-my-array-in-c	
+	
