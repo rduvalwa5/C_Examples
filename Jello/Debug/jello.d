@@ -1,1 +1,1 @@
-jello.d jello.o: ../jello.cpp
+jello.o: ../jello.cpp

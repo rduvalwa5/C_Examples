@@ -6,10 +6,10 @@
 #include <stdio.h>;
 #include <string.h>;
 
-#define MX 5
-#define LN 16
+// #define MX 5
+// #define LN 16
 
-char strg[MX][LN];
+// char strg[MX][LN];
 
 int main(void)
 {
@@ -43,19 +43,5 @@ content it other example.
 		}
 	printf("\n");
 	
-//	strg[0][0] = "bases"; //,"aces","cases","seca","interfaces"};
-//	printf("%c\n",&strg[0]);
-//	str[0] = "bases";
-/*
-//	printf("%s\n",chr);
-//	printf("%d\n",sizeof(str));
-//	printf("%d\n",sizeof(str[0]));
-*/
-/*
-	for(int i=0;i<sizeof(str);i++){
-		printf("In for loop\n");
-		printf("%s \n",&str[i]);
-	}
-	*/
 	return(0);
 }

@@ -57,9 +57,9 @@ int main()
 	}
 	printf("\n");
 
-//	for(int i = 0; i < strlen(aString);i++){
-//		printf("%d\n",&aString[i]);
-//	}
+	for(int i = 0; i < strlen(aString);i++){
+		printf("%d\n",&aString[i]);
+	}
 
 	for(int i = 0; i < strlen(aString);i++){
 		int address = &aString[i];
