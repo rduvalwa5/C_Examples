@@ -8,15 +8,44 @@
 #include <stdio.h>
 #include <String.h>
 
+
 /*
- * The quick brown coyote.
- * The coyote jumped over the lazy dog.
- * The coyote got Mary's little lamb had been.
- * Eat lamb coyotes can't be wrong.
- *
+ * C function proto type
  */
+int compareStrings(char *, char *);
+void concatenateStrings(char* s1, char* s2);
+void copy_string_to_string(char* s1, char* s2);
 
 int MAX_NUMBER_STRINGS = 4;
+
+
+/*
+ * strcpy(s1, s2);
+ * Copies string s2 into string s1.
+ */
+
+void copy_string_to_string(char* s1,char* s2){
+		strcpy(s1, s2);
+}
+
+/*
+ * C compare strings
+ */
+int compareStrings(char* s1,char* s2){
+	int result = 0;
+	result = strcmp(s1, s2);
+	return  result;
+}
+
+/*
+ * string concatenate strcat(s1, s2);
+ * Concatenates string s2 onto the end of string s1.
+ */
+void concatenateStrings(char* s1, char* s2 ){
+//		printf("concatenate %s to %s\n", s1, s2);
+		strcat(s1, s2);
+//		printf("cat is %s \n", strcat(s1, s2));
+	}
 
 
 int main(){
@@ -40,7 +69,7 @@ int main(){
 	  */
 	char *stringArray[] = {"This is String one.","String 2","String 3","At last String 4."};
 
-
+	char *comp = "The quick brown coyote.";
 
 	char* inputArray[MAX_NUMBER_STRINGS];
 	/*
@@ -98,6 +127,27 @@ int main(){
 					if(st == 3){ printf("%c  %d\n", four[i],&four[i]);}
 				}
 		}
+
+
+	for (st = 0; st < MAX_NUMBER_STRINGS ; st++){
+//		printf("%s , %s \n",one, inputArray[st]);
+		if(compareStrings(comp, inputArray[st]) == 0){
+			printf("%s , %s \n",one, inputArray[st]);
+			printf("Compare result is %d\n", compareStrings(comp, inputArray[st]));
+			}
+		}
+
+	char first [50] = "This is the first string.";
+	char second [50] = "Now the second string.";
+
+	printf("Before: %s\n", first);
+	concatenateStrings(first, second);
+	printf("After: %s\n", first);
+
+	printf("second before: %s\n", second);
+
+	copy_string_to_string(second, first);
+	printf("second after: %s\n", second);
 
 }
 
