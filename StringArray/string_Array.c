@@ -15,13 +15,29 @@
 /*
  * C function proto type
  */
+
+/*
+ * String manipulation functions
+ */
 int compareStrings(char *, char *);
 void concatenateStrings(char* s1, char* s2);
 void copy_string_to_string(char* s1, char* s2);
 int transform_string(char* s1, char* s2, int len);
 void limited_concatenateStrings(char* s1, char* s2, int len);
 void limited_copy_string_to_string(char* s1, char* s2, int len);
-//()
+
+/*
+ * String examination
+ */
+
+int get_string_lenth(char* s1);
+
+
+
+int get_string_lenth(char* s1){
+	return strlen(s1);
+	}
+
 
 int MAX_NUMBER_STRINGS = 4;
 
@@ -213,6 +229,8 @@ int main(){
 	limited_copy_string_to_string(destination, source4, 33);
 	printf("destinationn is now \"%s\"\n", destination);
 
+	printf("destination is %d long \n", get_string_lenth(destination));
+
 }
 
 /* Code output
@@ -382,5 +400,7 @@ length = 57 , string is "Lest we forget our purpose, we go forward toward our en
 length = 10 , string is "Fuck"
 the string is "Fuck this!Lest we forget our purpose"
 destinationn is now "Lest we forget our purpose, we go"
+
+
 
  */

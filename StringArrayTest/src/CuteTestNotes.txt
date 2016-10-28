@@ -1,0 +1,34 @@
+Cute Test Notes
+
+Links:
+http://cute-test.com
+http://cute-test.com/projects/cute/wiki/Writing_and_Running_CUTE_Unit_Test_Suites
+http://cute-test.com/projects/cute/wiki/Using_the_CUTE_Eclipse_Plugin
+
+
+
+#include "cute.h" 
+#include "ide_listener.h" 
+#include "cute_runner.h" 
+
+// TODO #include the headers for the code you want to test
+
+// TODO Add your test functions
+
+void thisIsATest() {
+    ASSERTM("start writing tests", false);      
+}
+
+void runSuite(){
+    cute::suite s;
+
+    // TODO push your tests onto s
+
+    s.push_back(CUTE(thisIsATest));
+    cute::ide_listener lis;
+    cute::makeRunner(lis)(s, "The Suite");
+}
+
+int main(){
+    runSuite();
+}
