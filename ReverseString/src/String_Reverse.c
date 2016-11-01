@@ -1,4 +1,5 @@
 /*
+ /*
  * String_Reverse.c
  * http://www.tutorialspoint.com/c_standard_library/string_h.htm
  *  Created on: Apr 11, 2015
@@ -16,27 +17,34 @@
 
 int main()
 {
-    int len = 27;
-	char * myString = "My string is this and that!";
 
+	char * myString = "My string is this and that!";
+    int len = strlen(myString);
 	printf("myString is \"%s\" \n",myString);
 	printf("%c\n",myString[0]);
+	printf("reference address %d\n",&myString);
+
 	printf("sizeof %d\n", sizeof(&myString));
 	printf("strlen %d\n",strlen(myString));
 
+	printf("Pointer points to the a memory location of the 1st character in the string %c \n ascii value is %d \n", *myString,  *myString );
+	printf("Pointer points to the a memory location of the last character in the string %c \n ascii value is %d \n", myString[26],  myString[26] );
 	char myArray[len];
 
 	for(int i = 0; i < len; i++)
 	{
 		myArray[i] = myString[i];
 	}
-	printf("myArray:    %s \n",myArray);
-	/*
-	 * Note adding a njull at the end of the array changed fixed problem
-	 */
-	char reversed[len + 1];
-	reversed[28] = '\0';
+	printf("myArray:  %s \n",myArray);
+	char reversed[len];
+	for( int i = len ; i > -1; i--)
+	{
+		int index = len - i;
+		reversed[index] = myArray[i];
+	}
+	printf("reversed: %s \n",reversed);
 
+/*
 	for(int i = len; i > -1; i--)
 	{
 		int index = len - i;
@@ -65,8 +73,6 @@ int main()
 		int address = &aString[i];
 		printf("%d  %s\n",address,&aString[i]);
 	}
+	*/
     return 0;
 }
-
-
-
