@@ -33,11 +33,22 @@ void limited_copy_string_to_string(char* s1, char* s2, int len);
 int get_string_lenth(char* s1);
 
 
+int compare_strings_limited(char* s1, char* s2, int len);
+
+
 
 int get_string_lenth(char* s1){
 	return strlen(s1);
 	}
 
+/*
+ * char *strncpy(char *dest, const char *src, size_t n)
+ * Copies up to n characters from the string pointed to, by src to dest.
+ */
+
+int compare_strings_limited(char* s1, char* s2, int len){
+	return strncmp(s1, s2, len);
+}
 
 int MAX_NUMBER_STRINGS = 4;
 
@@ -231,6 +242,16 @@ int main(){
 
 	printf("destination is %d long \n", get_string_lenth(destination));
 
+	/*
+	 * Demonstrate
+	 */
+
+	char s1 [50] = "This is the first string.";
+	char s2 [50] = "This is another fine mess.";
+	int IsZero, NotZero;
+	IsZero = compare_strings_limited(s1, s2, 8);
+	NotZero = compare_strings_limited(s1, s2, 9);
+	printf("IsZero is %d and NotZero is %d \n",IsZero, NotZero);
 }
 
 /* Code output

@@ -1,4 +1,3 @@
-/*
  /*
  * String_Reverse.c
  * http://www.tutorialspoint.com/c_standard_library/string_h.htm
