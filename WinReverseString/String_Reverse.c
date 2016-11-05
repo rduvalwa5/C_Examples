@@ -1,4 +1,5 @@
  /*
+  * Windows version of String_Reverse
  * String_Reverse.c
  * http://www.tutorialspoint.com/c_standard_library/string_h.htm
  *  Created on: Apr 11, 2015
@@ -8,6 +9,8 @@
  *  	sizeof is calculated at compile time where as strlen is run time
  *  	an empty array must be terminated in null '\0' otherwise you cannot move content to it
  *  In c a string is an array of chars
+ *
+ *
  */
 
 #include<stdio.h>
@@ -33,13 +36,6 @@ int main()
 	printf("Pointer points to the a memory location of the 1st character in the string %c \n ascii value is %d \n", *myString,  *myString );
 	printf("Pointer points to the a memory location of the last character in the string %c \n ascii value is %d \n", myString[26],  myString[26] );
 
-
-
-//	for( i = 0 ; i < len +1 ; i++){
-//			reversed[i] = '\0';
-//		}
-//	strncpy(string, array, 20);
-//	string[20] = '\0'
 
 	for(int i = 0; i < len; i++)
 	{
