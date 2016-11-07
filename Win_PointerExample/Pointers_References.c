@@ -8,11 +8,12 @@
 #include<stdio.h>
 #include <string.h>
 
-char [] null_initialize(char arr[]);
+char * null_initialize(char arr[]);
 
-char [] null_initialize(char arr[], int length){
+char *  null_initialize(char arr[]){
 	int size = 0;
-	for(size = 0; size < sizeof(arr); size++){ arr[size] = '\0'}
+	for(size = 0; size < strlen(arr); size++){ arr[size] = '\0';}
+	return(arr);
 	}
 
 int main()
@@ -20,16 +21,43 @@ int main()
     /*
      * Simple array construct
      */
+    int i = 0;
     int size = 5;
-    char arrCh[size + 1]; // = {'a','b','c','d','e','\0'};
-    arrChar[] = null_initialize(arrCh);
+    char arrCh[100]; // = {'a','b','c','d','e','\0'};
+//    char arrCh[size + 1]; // = {'a','b','c','d','e','\0'};
+    char * arrChar;
+    arrChar =  null_initialize(arrCh);
     printf("size of arrChar is %d\n", sizeof(arrChar));
+    printf("lenth of arrChar is %d\n", strlen(arrChar));
+    char str[] =  {'a','b','c','d','e','f','g','\0'};
+
+    for(i = 0; i < strlen(str); i++){
+    	arrChar[i] = str[i];
+//    	printf("%c",arrChar[i]);
+    }
+    printf("arrChar is %s size is %d\n",arrChar, strlen(arrChar));
+    arrChar =  null_initialize(arrCh);
+    printf("arrChar now is %s\n",arrChar);
+    int index = 0;
+    for(i = 65; i< (65+58); i++){
+    	if((i < 91) || (i > 96)){
+    	arrChar[index] = (char)i;
+//    	printf("%c",arrChar[index]);
+       	index++;
+    	}
+    }
+    arrChar[index] = '\0';
+    printf("\n");
+    for(i = 0; i < strlen(arrChar); i++){printf("%c",arrChar[i]);}
+
+    printf("\narrChar changed to %s size is %d\n",arrChar, strlen(arrChar));
+
     int arr2[] = {1,2,3,4,5,'\0'};
     int arr1[] = {1,2,3,4,5};
-    printf("Size is %d Size of array is %d\n",size, (int)(sizeof(arr2)/sizeof(arr2[0])));
+    printf("\nSize is %d Size of array is %d\n",size, (int)(sizeof(arr2)/sizeof(arr2[0])));
     printf("Size is %d Size of array is %d\n",size, (int)(sizeof(arr1)/sizeof(arr1[0])));
     printf("Null is \n", arr2[size]);
-    int i = 0;
+
 //    arr2[size] = '\0';
 //    for(i=0;i<sizeof(arr2);i++)
 //    {
@@ -93,5 +121,3 @@ int main()
 
     return 0;
 }
-
-
