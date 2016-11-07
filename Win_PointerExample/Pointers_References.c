@@ -23,8 +23,7 @@ int main()
      */
     int i = 0;
     int size = 5;
-    char arrCh[100]; // = {'a','b','c','d','e','\0'};
-//    char arrCh[size + 1]; // = {'a','b','c','d','e','\0'};
+    char arrCh[100];
     char * arrChar;
     arrChar =  null_initialize(arrCh);
     printf("size of arrChar is %d\n", sizeof(arrChar));
@@ -33,7 +32,6 @@ int main()
 
     for(i = 0; i < strlen(str); i++){
     	arrChar[i] = str[i];
-//    	printf("%c",arrChar[i]);
     }
     printf("arrChar is %s size is %d\n",arrChar, strlen(arrChar));
     arrChar =  null_initialize(arrCh);
@@ -42,7 +40,6 @@ int main()
     for(i = 65; i< (65+58); i++){
     	if((i < 91) || (i > 96)){
     	arrChar[index] = (char)i;
-//    	printf("%c",arrChar[index]);
        	index++;
     	}
     }
@@ -58,11 +55,6 @@ int main()
     printf("Size is %d Size of array is %d\n",size, (int)(sizeof(arr1)/sizeof(arr1[0])));
     printf("Null is \n", arr2[size]);
 
-//    arr2[size] = '\0';
-//    for(i=0;i<sizeof(arr2);i++)
-//    {
-//      arr2[i] = i; // Initializing each element seperately
-//    }
     printf("Size of array is %d\n",sizeof(arr2));
     printf("*arr2 points to first element of array and is %d\n",*arr2);
 
@@ -90,34 +82,6 @@ int main()
     	printf("Refer to Address &arr2 address is %i \n",&arr2[el]);
        	printf("X Point to value at address *arr2 value = %d \n",*arr2 + el);
     }
-
-    /* do it in reverse
-
-    int reversed[size]; // still don't know why array size ends up 4 time declared size
-    reversed[size]= '\0';
-
-    int index = 0;
-    for(el=sizeof(arr2); el > 0; el--)
-    {
-    	reversed[index] = arr2[el];
-    	printf("reversed is %d \n", reversed[index]);
-    	index++;
-    }
-    printf("reversed array is %s",&reversed);
-
-    for(el=0;el < sizeof(reversed);el++)
-    {
-    	printf("reversed[el] is %d \n",reversed[el]);
-    }
-
-    char charArray[5] = {'a','b','c','d','e'};
-
-    printf("charArray is %s\n",&charArray);
-    for(int i = 0; i < sizeof(charArray); i++){
-    	printf("%s \n",&charArray[i]);
-    }
-
- */
 
     return 0;
 }
