@@ -8,13 +8,22 @@
 #include<stdio.h>
 #include <string.h>
 
+char [] null_initialize(char arr[]);
+
+char [] null_initialize(char arr[], int length){
+	int size = 0;
+	for(size = 0; size < sizeof(arr); size++){ arr[size] = '\0'}
+	}
+
 int main()
 {
     /*
      * Simple array construct
      */
     int size = 5;
-    char arrChar[] = {'a','b','c','d','e','\0'};
+    char arrCh[size + 1]; // = {'a','b','c','d','e','\0'};
+    arrChar[] = null_initialize(arrCh);
+    printf("size of arrChar is %d\n", sizeof(arrChar));
     int arr2[] = {1,2,3,4,5,'\0'};
     int arr1[] = {1,2,3,4,5};
     printf("Size is %d Size of array is %d\n",size, (int)(sizeof(arr2)/sizeof(arr2[0])));
