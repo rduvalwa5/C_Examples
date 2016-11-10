@@ -1,0 +1,72 @@
+// demonstration of union type for variable storage and array storage
+
+#include <stdio.h>
+#include <ctype.h>
+#include <stdlib.h>
+#include <string.h>
+// atoi() convert alpha to int, atof convert string to double, atol convert string to long
+union U {
+		  char letter[11];
+		  int digit;
+		  double decimal;
+		};
+
+#define MAX 100
+
+void main()
+	{
+	int i = 0;
+	union U in;
+	char input[11];
+	
+	union U X[MAX];
+// cannot use scanf("%s", &input) because it will cause the while loop to fail
+			
+	while (input[0] != '\0')
+	{	printf("Input element %d\n",i);
+		gets(&input);
+		if (input[0] != '\0')
+		{
+//		gets(&input); wrong input occurs after test
+//		printf("Input is %s\n",input);
+			if (isalpha(input[0]) != 0) 
+			{
+			strcpy(in.letter, input);
+			strcpy (X[i].letter,in.letter);
+		//	printf(" in is %s\n",in.letter);
+		//	printf(" X[%d] is %s\n",i,X[i].letter);
+			i++;
+			
+			}
+			if (isdigit(input[0]) != 0)
+			{
+		//	printf("%f\n",atof(input));
+		//	printf("%d\n",atoi(input));
+			X[i].digit = atoi(input);
+		//	printf(" X[%d] is %d\n",i,X[i].digit);
+			i++;	
+			}
+		//	printf("Input element %d\n",i);
+		}
+	}
+	if (input[0] == '\0')
+	{	printf("input[0] is NULL\n"); i--; }
+
+	printf(" i is %d\n",i);
+	while ( i > -1)
+	{
+		printf("X[%d] is %s or %d\n",i, X[i].letter,X[i].digit);
+		i--;
+	}
+
+	printf("%s\n",input);
+
+	strcpy(X[0].letter,"abcdefghij");
+	X[1].digit = 101;
+	X[2].decimal = 1.3;
+	
+	printf("%s\t", X[0].letter);
+	printf("%d\t", X[1]);
+	printf("%3.2f\n",X[2]);
+	return ;
+  }
