@@ -1,0 +1,7 @@
+This is a test file for a read file code into dynamic memory.
+It should not matter initially where the line breaks or delimiters are.
+But maybe next time.
+`~1!2@3#4$5%6^&78*9(0)_-+=qwertyuiop[]
+QWERTYUIOP{}|\
+ASDFGHJKL:"asdfghjkl;'
+zxcvbnm,./ZXCVBNM<>?

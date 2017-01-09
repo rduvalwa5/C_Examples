@@ -1,0 +1,6 @@
+string,*,15,N
+string,a1,10,N
+number,0,0,N
+number,0,0,N
+string,a _-,20,Y
+date,MM/DD/CCYY,0,N
