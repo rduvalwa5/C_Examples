@@ -1,1 +1,0 @@
-jello.o: ../jello.cpp

@@ -1,1 +1,0 @@
-tcpEchoServer.o: ../tcpEchoServer.c
