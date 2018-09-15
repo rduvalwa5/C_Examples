@@ -1,1 +1,0 @@
-ReadFile.o: ../ReadFile.c
