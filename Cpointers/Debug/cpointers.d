@@ -1,1 +1,0 @@
-cpointers.o: ../cpointers.c

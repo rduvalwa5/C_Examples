@@ -1,1 +1,0 @@
-sortSmallToLarge.o: ../sortSmallToLarge.c

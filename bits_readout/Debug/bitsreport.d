@@ -1,1 +1,0 @@
-bitsreport.o: ../bitsreport.cpp
